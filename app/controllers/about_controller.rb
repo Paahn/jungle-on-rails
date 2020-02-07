@@ -1,0 +1,1 @@
+class AboutController < ApplicationController; end
