@@ -1,1 +1,6 @@
-class AboutController < ApplicationController; end
+class AboutController < ApplicationController
+
+def show
+end
+
+end
