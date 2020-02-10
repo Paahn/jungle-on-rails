@@ -12,6 +12,14 @@
   <!--<span class="label label-success">Active</span>
   <span class="label label-danger">Past</span>
   <span class="label label-warning">Upcoming</span>-->
+
+  <% if sale.ends_on < Date.current %>
+    <span class="label label-danger">Past</span>
+  <% elsif sale.starts_on > Date.current %>
+    <span class="label label-warning">Upcoming</span>
+  <% elsif sale.starts_on < Date.current && sale.ends_on > Date.current %>
+    <span class="label label-success">Active</span>
+  <% end %>
   </td>
   <td>
     <%= sale.percent_off %>
