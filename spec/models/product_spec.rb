@@ -17,6 +17,8 @@ RSpec.describe Product, type: :model do
     end
 
     it 'should fail validation if name is missing' do
+      @product.name = nil
+      expect(@product).to_not be_valid
     end
 
     it 'should fail validation if price is missing' do
