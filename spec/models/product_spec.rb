@@ -2,15 +2,31 @@ require 'rails_helper'
 
 RSpec.describe Product, type: :model do
   describe 'Validations' do
-    it 'should validate successfuly if all fields are present'
 
-    it 'should fail validation if name is missing'
+    before(:each) do
+      category = Category.create(name: "Clothing")
+      @product = category.products.new(
+        name: "crocs",
+        price: 999.99,
+        quantity: 69,
+      )
+    end
 
-    it 'should fail validation if price is missing'
+    it 'should validate successfuly if all fields are present' do
+      expect(@product).to be_valid
+    end
 
-    it 'should fail validation if quantity is missing'
+    it 'should fail validation if name is missing' do
+    end
 
-    it 'should fail validation is category is missing'
-    
+    it 'should fail validation if price is missing' do
+    end
+
+    it 'should fail validation if quantity is missing' do
+    end
+
+    it 'should fail validation is category is missing' do
+    end
+
   end
 end
