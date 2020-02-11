@@ -22,6 +22,8 @@ RSpec.describe Product, type: :model do
     end
 
     it 'should fail validation if price is missing' do
+      @product.price_cents = nil
+      expect(@product).to_not be_valid
     end
 
     it 'should fail validation if quantity is missing' do
