@@ -32,6 +32,8 @@ RSpec.describe Product, type: :model do
     end
 
     it 'should fail validation is category is missing' do
+      @product.category = nil
+      expect(@product).to_not be_valid
     end
 
   end
